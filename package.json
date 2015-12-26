@@ -1,0 +1,34 @@
+{
+  "name": "freenom",
+  "version": "0.0.0",
+  "description": "Freenom API bindings for Node.js",
+  "homepage": "https://github.com/lpinca/freenom",
+  "bugs": "https://github.com/lpinca/freenom/issues",
+  "repository": "lpinca/freenom",
+  "author": "Luigi Pinca",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test-travis": "istanbul cover _mocha --report lcovonly",
+    "coverage": "istanbul cover _mocha",
+    "test": "mocha"
+  },
+  "files": [
+    "endpoints",
+    "index.js"
+  ],
+  "keywords": [
+    "freenom",
+    "api"
+  ],
+  "dependencies": {
+    "request": "2.67.x"
+  },
+  "devDependencies": {
+    "chai": "3.4.x",
+    "istanbul": "0.4.x",
+    "mocha": "2.3.x",
+    "nock": "3.6.x",
+    "pre-commit": "1.1.x"
+  }
+}
