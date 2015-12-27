@@ -5,7 +5,7 @@
  *
  * @param {Freenom} api Reference to the Freenom instance.
  * @constructor
- * @private
+ * @public
  */
 function Service(api) {
   this.endpoint = api.baseUrl + '/service';
