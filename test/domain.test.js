@@ -1,8 +1,8 @@
 describe('Freenom#domain', function () {
   'use strict';
 
-  var expect = require('chai').expect
-    , common = require('./common')
+  var common = require('./common')
+    , assert = require('assert')
     , Freenom = require('..')
     , nock = require('nock');
 
@@ -20,7 +20,7 @@ describe('Freenom#domain', function () {
     freenom.domain.search(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -42,7 +42,7 @@ describe('Freenom#domain', function () {
     freenom.domain.register(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -58,7 +58,7 @@ describe('Freenom#domain', function () {
     freenom.domain.renew(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -74,7 +74,7 @@ describe('Freenom#domain', function () {
     freenom.domain.getinfo(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -90,7 +90,7 @@ describe('Freenom#domain', function () {
     freenom.domain.modify(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -106,7 +106,7 @@ describe('Freenom#domain', function () {
     freenom.domain.delete(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -122,7 +122,7 @@ describe('Freenom#domain', function () {
     freenom.domain.restore(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -142,7 +142,7 @@ describe('Freenom#domain', function () {
     freenom.domain.upgrade(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -157,7 +157,7 @@ describe('Freenom#domain', function () {
     freenom.domain.list(function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });

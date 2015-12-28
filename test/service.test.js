@@ -1,8 +1,8 @@
 describe('Freenom#service', function () {
   'use strict';
 
-  var expect = require('chai').expect
-    , common = require('./common')
+  var common = require('./common')
+    , assert = require('assert')
     , Freenom = require('..')
     , nock = require('nock');
 
@@ -19,7 +19,7 @@ describe('Freenom#service', function () {
     freenom.service.ping(function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });

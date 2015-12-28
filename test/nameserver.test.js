@@ -1,8 +1,8 @@
 describe('Freenom#nameserver', function () {
   'use strict';
 
-  var expect = require('chai').expect
-    , common = require('./common')
+  var common = require('./common')
+    , assert = require('assert')
     , Freenom = require('..')
     , nock = require('nock');
 
@@ -24,7 +24,7 @@ describe('Freenom#nameserver', function () {
     freenom.nameserver.register(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -40,7 +40,7 @@ describe('Freenom#nameserver', function () {
     freenom.nameserver.delete(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
@@ -56,7 +56,7 @@ describe('Freenom#nameserver', function () {
     freenom.nameserver.list(params, function (err, res) {
       if (err) return done(err);
 
-      expect(res).to.eql(result);
+      assert.deepStrictEqual(res, result);
       done();
     });
   });
