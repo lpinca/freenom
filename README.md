@@ -63,9 +63,14 @@ freenom.service.ping(function (err, res) {
   - `register(params, callback)`
   - `delete(params, callback)`
   - `list(params, callback)`
+- contact
+  - `register(params, callback)`
+  - `delete(params, callback)`
+  - `getinfo(params, callback)`
+  - `list([params], callback)`
 
 where `params` is a plain JavaScript object, e.g. `{ domainname: 'test002.tk' }`.
-The parameters documentation can be found at http://www.freenom.com/en/freenom-api.html.
+See http://www.freenom.com/en/freenom-api.html for parameters details.
 
 ## Credits
 
