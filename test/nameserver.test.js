@@ -24,7 +24,7 @@ describe('Freenom#nameserver', function () {
     freenom.nameserver.register(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });
@@ -40,7 +40,7 @@ describe('Freenom#nameserver', function () {
     freenom.nameserver.delete(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });
@@ -56,7 +56,7 @@ describe('Freenom#nameserver', function () {
     freenom.nameserver.list(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });

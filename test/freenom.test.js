@@ -48,7 +48,7 @@ describe('Freenom', function () {
     freenom.domain.list(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });

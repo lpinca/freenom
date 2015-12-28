@@ -32,7 +32,7 @@ describe('Freenom#contact', function () {
     freenom.contact.register(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });
@@ -48,7 +48,7 @@ describe('Freenom#contact', function () {
     freenom.contact.delete(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });
@@ -64,7 +64,7 @@ describe('Freenom#contact', function () {
     freenom.contact.getinfo(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });
@@ -79,7 +79,7 @@ describe('Freenom#contact', function () {
     freenom.contact.list(function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });
@@ -95,7 +95,7 @@ describe('Freenom#contact', function () {
     freenom.contact.list(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });

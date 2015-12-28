@@ -19,7 +19,7 @@ describe('Freenom#service', function () {
     freenom.service.ping(function (err, res) {
       if (err) return done(err);
 
-      assert.deepStrictEqual(res, result);
+      assert.deepEqual(res, result);
       done();
     });
   });
