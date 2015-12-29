@@ -94,7 +94,7 @@ describe('Freenom#transfer', function () {
     });
   });
 
-  it('lists all contacts under the account (2/2)', function (done) {
+  it('lists all domain transfers (2/2)', function (done) {
     var params = { email: 'john@doe.com', password: 'tieGhei4qu' };
     var result = { result: '2 TRANSFERS LISTED' };
 
