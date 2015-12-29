@@ -68,6 +68,12 @@ freenom.service.ping(function (err, res) {
   - `delete(params, callback)`
   - `getinfo(params, callback)`
   - `list([params], callback)`
+- transfer
+  - `price(params, callback)`
+  - `request(params, callback)`
+  - `approve(params, callback)`
+  - `decline(params, callback)`
+  - `list([params], callback)`
 
 where `params` is a plain JavaScript object, e.g. `{ domainname: 'test002.tk' }`.
 See http://www.freenom.com/en/freenom-api.html for parameters details.
