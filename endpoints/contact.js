@@ -54,7 +54,7 @@ Contact.prototype.getinfo = function getinfo(params, fn) {
 /**
  * List contacts under account.
  *
- * @param {Object} params Parameters
+ * @param {Object} [params] Parameters
  * @param {Function} fn Callback
  * @return {Contact} this
  * @public
