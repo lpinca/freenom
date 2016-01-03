@@ -12,6 +12,10 @@ describe('Freenom', function () {
     assert.ok(typeof Freenom === 'function');
   });
 
+  it('makes the new operator optional', function () {
+    assert.ok(Freenom() instanceof Freenom);
+  });
+
   it('instantiates the endpoints lazily', function () {
     var freenom = new Freenom()
       , endpoint;
