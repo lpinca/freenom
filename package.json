@@ -1,6 +1,6 @@
 {
   "name": "freenom",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Freenom API bindings for Node.js",
   "homepage": "https://github.com/lpinca/freenom",
   "bugs": "https://github.com/lpinca/freenom/issues",
