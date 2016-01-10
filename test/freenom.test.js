@@ -2,42 +2,42 @@ describe('Freenom', function () {
   'use strict';
 
   var endpoints = require('../endpoints')
+    , expect = require('chai').expect
     , common = require('./common')
     , qs = require('querystring')
-    , assert = require('assert')
     , Freenom = require('..')
     , nock = require('nock');
 
   it('exports the constructor', function () {
-    assert.ok(typeof Freenom === 'function');
+    expect(Freenom).to.be.a('function');
   });
 
   it('makes the new operator optional', function () {
-    assert.ok(Freenom() instanceof Freenom);
+    expect(Freenom()).to.be.an.instanceof(Freenom);
   });
 
   it('instantiates the endpoints lazily', function () {
     var freenom = new Freenom()
       , endpoint;
 
-    assert.strictEqual(freenom._domain, undefined);
+    expect(freenom._domain).to.equal(undefined);
 
     endpoint = freenom.domain;
 
-    assert.strictEqual(freenom._domain, endpoint);
-    assert.strictEqual(freenom.domain, endpoint);
+    expect(freenom._domain).to.equal(endpoint);
+    expect(freenom.domain).to.equal(endpoint);
   });
 
   it('allows to manually instantiate an endpoint', function () {
     var freenom = new Freenom()
       , endpoint = new endpoints.Service(freenom);
 
-    assert.strictEqual(freenom._domain, undefined);
+    expect(freenom._domain).to.equal(undefined);
 
     freenom.domain = endpoint;
 
-    assert.strictEqual(freenom._domain, endpoint);
-    assert.strictEqual(freenom.domain, endpoint);
+    expect(freenom._domain).to.equal(endpoint);
+    expect(freenom.domain).to.equal(endpoint);
   });
 
   it('allows to specify authentication credentials as parameters', function (done) {
@@ -52,7 +52,7 @@ describe('Freenom', function () {
     freenom.domain.list(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepEqual(res, result);
+      expect(res).to.deep.equal(result);
       done();
     });
   });
@@ -66,9 +66,9 @@ describe('Freenom', function () {
     .replyWithError(message);
 
     freenom.service.ping(function (err, res) {
-      assert.ok(err instanceof Error);
-      assert.strictEqual(err.message, message);
-      assert.strictEqual(res, undefined);
+      expect(err).to.be.an.instanceof(Error);
+      expect(err.message).to.equal(message);
+      expect(res).to.equal(undefined);
       done();
     });
   });
@@ -81,9 +81,9 @@ describe('Freenom', function () {
     .reply(500, '<!DOCTYPE html><html><head></head><body></body></html>');
 
     freenom.service.ping(function (err, res) {
-      assert.ok(err instanceof Error);
-      assert.strictEqual(err.message, 'Failed to parse the response body');
-      assert.strictEqual(res, undefined);
+      expect(err).to.be.an.instanceof(Error);
+      expect(err.message).to.equal('Failed to parse the response body');
+      expect(res).to.equal(undefined);
       done();
     });
   });
@@ -97,9 +97,9 @@ describe('Freenom', function () {
     .reply(200, { status: 'error', error: 'Invalid domainname' });
 
     freenom.domain.search(params, function (err, res) {
-      assert.ok(err instanceof Error);
-      assert.strictEqual(err.message, 'Invalid domainname');
-      assert.strictEqual(res, undefined);
+      expect(err).to.be.an.instanceof(Error);
+      expect(err.message).to.equal('Invalid domainname');
+      expect(res).to.equal(undefined);
       done();
     });
   });

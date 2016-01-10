@@ -1,9 +1,9 @@
 describe('Freenom#transfer', function () {
   'use strict';
 
-  var common = require('./common')
+  var expect = require('chai').expect
+    , common = require('./common')
     , qs = require('querystring')
-    , assert = require('assert')
     , Freenom = require('..')
     , nock = require('nock');
 
@@ -21,7 +21,7 @@ describe('Freenom#transfer', function () {
     freenom.transfer.price(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepEqual(res, result);
+      expect(res).to.deep.equal(result);
       done();
     });
   });
@@ -42,7 +42,7 @@ describe('Freenom#transfer', function () {
     freenom.transfer.request(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepEqual(res, result);
+      expect(res).to.deep.equal(result);
       done();
     });
   });
@@ -58,7 +58,7 @@ describe('Freenom#transfer', function () {
     freenom.transfer.approve(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepEqual(res, result);
+      expect(res).to.deep.equal(result);
       done();
     });
   });
@@ -74,7 +74,7 @@ describe('Freenom#transfer', function () {
     freenom.transfer.decline(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepEqual(res, result);
+      expect(res).to.deep.equal(result);
       done();
     });
   });
@@ -89,7 +89,7 @@ describe('Freenom#transfer', function () {
     freenom.transfer.list(function (err, res) {
       if (err) return done(err);
 
-      assert.deepEqual(res, result);
+      expect(res).to.deep.equal(result);
       done();
     });
   });
@@ -105,7 +105,7 @@ describe('Freenom#transfer', function () {
     freenom.transfer.list(params, function (err, res) {
       if (err) return done(err);
 
-      assert.deepEqual(res, result);
+      expect(res).to.deep.equal(result);
       done();
     });
   });
