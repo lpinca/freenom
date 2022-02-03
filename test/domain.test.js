@@ -7,7 +7,7 @@ describe('Freenom#domain', function () {
     , nock = require('nock');
 
   var freenom = new Freenom(common.email, common.password)
-    , scope = nock('https://api.freenom.com/v2/domain');
+    , scope = nock('https://api.freenom.com/v1/domain');
 
   it('searches a domain for availability', function (done) {
     var params = { domainname: 'test001.tk', domaintype: 'FREE' };

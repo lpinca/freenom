@@ -7,7 +7,7 @@ describe('Freenom#nameserver', function () {
     , nock = require('nock');
 
   var freenom = new Freenom(common.email, common.password)
-    , scope = nock('https://api.freenom.com/v2/nameserver');
+    , scope = nock('https://api.freenom.com/v1/nameserver');
 
   it('registers a nameserver glue record', function (done) {
     var params = {

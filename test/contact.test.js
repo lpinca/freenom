@@ -8,7 +8,7 @@ describe('Freenom#contact', function () {
     , nock = require('nock');
 
   var freenom = new Freenom(common.email, common.password)
-    , scope = nock('https://api.freenom.com/v2/contact');
+    , scope = nock('https://api.freenom.com/v1/contact');
 
   it('creates a new contact', function (done) {
     var params = {

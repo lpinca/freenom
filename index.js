@@ -14,7 +14,7 @@ var endpoints = require('./endpoints')
 function Freenom(email, password) {
   if (!(this instanceof Freenom)) return new Freenom(email, password);
 
-  this.baseUrl = 'https://api.freenom.com/v2';
+  this.baseUrl = 'https://api.freenom.com/v1';
   this.password = password;
   this.email = email;
 

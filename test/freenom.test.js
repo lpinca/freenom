@@ -45,7 +45,7 @@ describe('Freenom', function () {
       , params = { email: 'john@doe.com', password: 'tieGhei4qu' }
       , result = { result: '2 DOMAINS FOUND' };
 
-    nock('https://api.freenom.com/v2/domain')
+    nock('https://api.freenom.com/v1/domain')
     .get('/list?' + qs.stringify(params))
     .reply(200, result);
 
@@ -61,7 +61,7 @@ describe('Freenom', function () {
     var message = 'Something wrong happened'
       , freenom = new Freenom();
 
-    nock('https://api.freenom.com/v2/service')
+    nock('https://api.freenom.com/v1/service')
     .get('/ping')
     .replyWithError(message);
 
@@ -76,7 +76,7 @@ describe('Freenom', function () {
   it('returns an error if it fails to parse the response body', function (done) {
     var freenom = new Freenom();
 
-    nock('https://api.freenom.com/v2/service')
+    nock('https://api.freenom.com/v1/service')
     .get('/ping')
     .reply(500, '<!DOCTYPE html><html><head></head><body></body></html>');
 
@@ -92,7 +92,7 @@ describe('Freenom', function () {
     var params = { domainname: '------.tk', domaintype: 'PAID' };
     var freenom = new Freenom(common.email, common.password);
 
-    nock('https://api.freenom.com/v2/domain')
+    nock('https://api.freenom.com/v1/domain')
     .get('/search?' + common.stringify(params))
     .reply(200, { status: 'error', error: 'Invalid domainname' });
 

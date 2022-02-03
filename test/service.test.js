@@ -7,7 +7,7 @@ describe('Freenom#service', function () {
     , nock = require('nock');
 
   var freenom = new Freenom(common.email, common.password)
-    , scope = nock('https://api.freenom.com/v2/service');
+    , scope = nock('https://api.freenom.com/v1/service');
 
   it('pings the service', function (done) {
     var result = { result: 'PING REPLY' };

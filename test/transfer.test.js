@@ -7,7 +7,7 @@ describe('Freenom#transfer', function () {
     , Freenom = require('..')
     , nock = require('nock');
 
-  var scope = nock('https://api.freenom.com/v2/domain/transfer')
+  var scope = nock('https://api.freenom.com/v1/domain/transfer')
     , freenom = new Freenom(common.email, common.password);
 
   it('gets the price of a domain transfer', function (done) {
